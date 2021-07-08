@@ -1,0 +1,13 @@
+task:
+    freebsd_instance:
+      matrix:
+        - image: freebsd-12-1-release-amd64
+        - image: freebsd-12-2-release-amd64
+        - image: freebsd-13-0-release-amd64
+    build_script:
+      - ASSUME_ALWAYS_YES=yes pkg bootstrap -f
+      - pkg install -y cmake ninja desktop-file-utils pkgconf qt5-buildtools qt5-linguisttools qt5-qmake libxcb menu-cache libfm libexif glib20 gettext-runtime qt5-core qt5-dbus qt5-gui qt5-widgets qt5-x11extras
+    install_script: 
+      - make BATCH=yes package
+    binaries_artifacts:
+        path: hellodesktop-filer*.txz
