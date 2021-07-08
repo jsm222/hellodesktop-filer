@@ -9,6 +9,6 @@ task:
       - pkg install -y cmake ninja desktop-file-utils pkgconf qt5-buildtools qt5-linguisttools qt5-qmake libxcb menu-cache libfm libexif glib gettext-runtime qt5-core qt5-dbus qt5-gui qt5-widgets qt5-x11extras
     install_script: 
       - make BATCH=yes package
-      - cp /tmp/cirrus-ci-build/work/hellodesktop-filer-0.10.txz hellodesktop-filer-0.10.txz
+      - cp /tmp/cirrus-ci-build/work/pkg/hellodesktop-filer-0.10.txz hellodesktop-filer-0.10.txz
     binaries_artifacts:
         path: hellodesktop-filer-0.10.txz
